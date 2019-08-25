@@ -33,17 +33,18 @@ export class RecipesService {
     // console.log(this.recipes);
     return [...this.recipes];
   }
-  getRecipe(recipeId: string){
-    console.log(recipeId);
-  }
-  deleteRecipe(recipeId){
-    let i;
-    for(i = 0; i < this.recipes.length; i++) {
+  // getRecipe(recipeId: string){
+  //   console.log(recipeId);
+  // }
+  // deleteRecipe(recipeId){
+  //   let i;
+  //   for(i = 0; i < this.recipes.length; i++) {
 
-      if(this.recipes[i].id == recipeId.id){
-        this.recipes.splice(i, 1);
-      }
-      console.log(this.recipes);
-    }
-  }
+  //     if(this.recipes[i].id == recipeId.id){
+  //       this.recipes.splice(i, 1);
+  //     }
+  //     console.log(this.recipes);
+  //   }
+  //   this.getAllRecipes();
+  // }
 }

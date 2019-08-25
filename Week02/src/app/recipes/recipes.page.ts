@@ -17,5 +17,18 @@ export class RecipesPage implements OnInit {
   ngOnInit() {
     this.recipes = this.recipesService.getAllRecipes();
   }
-  
+  getRecipe(recipeId: string){
+    console.log(recipeId);
+  }
+  deleteRecipe(recipeId){
+    let i;
+    for(i = 0; i < this.recipes.length; i++) {
+
+      if(this.recipes[i].id == recipeId){
+        this.recipes.splice(i, 1);
+      }
+      console.log(this.recipes);
+    }
+    this.recipes =this.recipes;
+  }
 }
