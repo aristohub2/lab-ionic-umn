@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-round-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Mom's Recipe Details</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="delete()">
+        <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card ion-margin>
+    <ion-img [src]="recipe.imageUrl"></ion-img>
+    <ion-card-header class="ion-no-margin">
+      <ion-card-subtitle>Makan Enak</ion-card-subtitle>
+      <ion-card-title>{{recipe.title}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <h3 class="ion-text-center">Ingredients</h3>
+    <ion-row>
+      <ion-item *ngFor="let ingredients of recipe.ingredients" >
+        <ion-icon name="checkmark"></ion-icon>
+        <ion-card-subtitle>{{ingredients}}</ion-card-subtitle>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+  
+  <ion-card>
+    <h3 class="ion-text-center">Don't Include</h3>
+    <ion-row>
+      <ion-item *ngFor="let dontInclude of recipe.dontInclude" >
+        <ion-icon name="close"></ion-icon>
+        <ion-card-subtitle>{{dontInclude}}</ion-card-subtitle>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+
+</ion-content>
